@@ -8,7 +8,12 @@ const server: express.Application = express(); //  서버(기본 앱)
 //  Controllers
 const memberController: MemberController = MemberController.getInstance();
 
-server.get("/member/test", (req, res) => res.json(memberController.getTest()));
+server.get("/member/test", (req, res) => {
+	res.json(memberController.getTest());
+});
+server.get("/member/:userId", (req, res) => {
+	memberController.findUser(req.params.userId, req.query.sns as string);
+});
 
 server.listen(PORT, () => {
 	console.log(`${PORT}포트로 서버 실행 중`);

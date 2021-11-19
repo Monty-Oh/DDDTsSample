@@ -3,7 +3,7 @@ import MemberController from "../../../main/member/controller/MemberController";
 import * as sinon from "sinon";
 import HelloDockerService from "../../../main/member/application/HelloDockerService";
 import MemberFindService from "../../../main/member/application/MemberFindService";
-import UserDto from "../../../main/member/controller/dto/user/UserDto";
+import MemberDto from "../../../main/member/controller/dto/user/UserDto";
 import Sns from "../../../main/common/enums/Sns";
 
 describe("MemberController 테스트", () => {
@@ -13,7 +13,7 @@ describe("MemberController 테스트", () => {
 		//	given
 		const memberFindService = MemberFindService.getInstance();
 		const memberFindServiceMock = sinon.mock(memberFindService);
-		const expectedUser = new UserDto(
+		const expectedUser = new MemberDto(
 			1,
 			"monty",
 			"monty@plgrim.com",
@@ -28,7 +28,7 @@ describe("MemberController 테스트", () => {
 			.returns(expectedUser);
 
 		//	when
-		const result = memberController.findUserByUsrNo("monty", "0");
+		const result = memberController.findUser("monty", "0");
 
 		//	then
 		expect(result).to.deep.equal(expectedUser);

@@ -19,7 +19,7 @@ export default class MemberController {
 	/**
 	 * 유저 조회 - userId
 	 * */
-	findUserByUsrNo(userId: string, sns: string) {
+	findUser(userId: string, sns: string) {
 		return this.memberFindService.findUserByUserIdAndSns(
 			userId,
 			Number(sns),

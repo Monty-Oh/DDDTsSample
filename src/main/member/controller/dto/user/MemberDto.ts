@@ -1,6 +1,6 @@
 import Sns from "../../../../common/enums/Sns";
 
-export default class UserDto {
+export default class MemberDto {
 	private userNo: number;
 	private userId: string;
 	private email: string;
