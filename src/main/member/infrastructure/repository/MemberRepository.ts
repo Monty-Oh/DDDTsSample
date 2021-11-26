@@ -1,8 +1,8 @@
-import Sns from "../../../common/enums/Sns";
-import MemberDto from "../../controller/dto/user/MemberDto";
+import Member from "../../domain/model/aggregates/Member";
 
 interface MemberRepository {
-	findUserByUserIdAndSns(userId: string, sns: Sns): MemberDto | null;
+	save(member: Member): Promise<Member>;
+	findMemberByUserIdAndSns(member: Member): Promise<Member>;
 }
 
 export default MemberRepository;
