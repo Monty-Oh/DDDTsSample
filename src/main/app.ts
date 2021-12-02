@@ -25,7 +25,7 @@ server.listen(PORT, () => {
 import { graphqlHTTP } from "express-graphql";
 import schema from "./schema";
 import rootValue from "./resolver";
-
+// 테스트테스트...
 graphqlHTTP &&
 	server.use(
 		"/graphql",
